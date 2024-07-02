@@ -1,0 +1,19 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efefef;
+    font-family: monospace;
+}
+
+img {
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+}
