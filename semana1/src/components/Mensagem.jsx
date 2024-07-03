@@ -2,19 +2,13 @@
 // façam parte do projeto
 import "./Mensagem.css";
 
-function Mensagem() {
-    const textoTitulo = "As batatas quando nascem se esparramam pelo chão";
-    const nomeAutor = "J. Almir";
-    const linkImagem = "https://picsum.photos/200";
-
+function Mensagem(props) {
     return (
         <section className="mensagem-corpo">
-            <h2 className="mensagem-titulo">{textoTitulo.toUpperCase()}</h2>
-            <img src={linkImagem} alt="Imagem da mensagem"/>
-            <p className="paragrafo">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quas.
-            </p>
-            <small>Criado por: {nomeAutor}</small>
+            <h2 className="mensagem-titulo">{props.textoTitulo.toUpperCase()}</h2>
+            <img src={props.linkImagem} alt="Imagem da mensagem"/>
+            <p className="paragrafo">{props.paragrafo}</p>
+            <small>Criado por: {props.nomeAutor}</small>
         </section>
     );
 }
