@@ -1,0 +1,22 @@
+.card-produto {
+  background-color: whitesmoke;
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  width: 300px;
+  margin: 8px auto;
+}
+
+.card-produto h4 {
+  font-size: 2rem;
+}
+
+.grifado {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.desconto {
+  color: green;
+}
+
