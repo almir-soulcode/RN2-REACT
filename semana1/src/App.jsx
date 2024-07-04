@@ -10,6 +10,7 @@ import Mensagem from "./components/Mensagem";
 import Navbar from "./components/Navbar";
 import CardAluno from "./components/CardAluno";
 import CardProduto from "./components/CardProduto";
+import Listagem from "./components/Listagem";
 
 // Componente principal da aplicação
 function App() {
@@ -34,9 +35,10 @@ function App() {
       {/* <CardAluno nome="José" serie="7º" media={8.5}/>
       <CardAluno nome="Igor" serie="9º" media={5.5}/>
       <CardAluno nome="Victor" serie="6º" media={7.0}/> */}
-      <CardProduto nome="Celular" precoUnitario={2000} desconto={10}/>
+      {/* <CardProduto nome="Celular" precoUnitario={2000} desconto={10}/>
       <CardProduto nome="Fone Wireless" precoUnitario={100} desconto={15}/>
-      <CardProduto nome="Carro" precoUnitario={90000} desconto={0}/>
+      <CardProduto nome="Carro" precoUnitario={90000} desconto={0}/> */}
+      <Listagem />
     </>
   );
 }
