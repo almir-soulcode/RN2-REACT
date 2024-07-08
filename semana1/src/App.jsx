@@ -19,6 +19,9 @@ import Eventos from "./components/Eventos";
 function App() {
   return (
     <>
+      <Contador valorInicial={20} />
+      <Contador valorInicial={0}/>
+      <Contador valorInicial={1000}/>
       <Contador />
     </>
   );

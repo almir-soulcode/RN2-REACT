@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./Contador.css";
 
-function Contador() {
+// Podemos definir um valor padrão para as props
+function Contador({ valorInicial = 0, batata = 0 }) {
     // Para definir um estado usamos: useState
     // useState -> estado, função para alterar este estado
     // definimos no useState o valor inicial do estado
-    const [numero, setNumero] = useState(0);
+    // useState -> react hooks
+    const [numero, setNumero] = useState(valorInicial);
 
     function handleIncremento() {
         // Indica ao componente que ele deve "atualizar",
@@ -21,13 +23,21 @@ function Contador() {
         }
     }
 
-    // Crie um botão que ao clicar incrementa +100
+    function handleIncremento100() {
+        setNumero(numero + 100);
+    }
+
+    function handleZerar() {
+        setNumero(valorInicial); // numero = 0
+    }
 
     return (
         <section>
             <h2 className={numero % 2 === 0? "par":"impar"}>Contagem: {numero}</h2>
             <button onClick={handleIncremento}>+1</button>
             <button onClick={handleDecremento}>-1</button>
+            <button onClick={handleIncremento100}>+100</button>
+            <button onClick={handleZerar}>Zerar</button>
         </section>
     );
 }
