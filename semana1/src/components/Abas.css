@@ -1,0 +1,15 @@
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.botoes button {
+    padding: 2px 18px;
+}
+
+.ativo {
+    font-weight: bold;
+    background-color: chocolate;
+    color: white;
+}
