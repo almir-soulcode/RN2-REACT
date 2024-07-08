@@ -12,35 +12,14 @@
 // import CardProduto from "./components/CardProduto";
 // import Listagem from "./components/Listagem";
 import Banner from "./components/Banner";
+import Contador from "./components/Contador";
+import Eventos from "./components/Eventos";
 
 // Componente principal da aplicação
 function App() {
   return (
     <>
-      {/* <Mensagem
-        textoTitulo="As batatas quando nascem se esparramam pelo chão"
-        nomeAutor="J. Almir"
-        paragrafo="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        linkImagem="https://picsum.photos/200"
-      />
-      <Mensagem
-        textoTitulo="Quarta-feira é dia de React"
-        nomeAutor="Gabriel Braga"
-        paragrafo="Estudamos props e renderização condicional"
-        linkImagem="https://picsum.photos/200"
-      /> */}
-      {/* <Navbar logado={true} nomeUsuario="Batata"/>
-      <Navbar logado={false} />
-      <Blog />
-      <Rodape /> */}
-      {/* <CardAluno nome="José" serie="7º" media={8.5}/>
-      <CardAluno nome="Igor" serie="9º" media={5.5}/>
-      <CardAluno nome="Victor" serie="6º" media={7.0}/> */}
-      {/* <CardProduto nome="Celular" precoUnitario={2000} desconto={10}/>
-      <CardProduto nome="Fone Wireless" precoUnitario={100} desconto={15}/>
-      <CardProduto nome="Carro" precoUnitario={90000} desconto={0}/> */}
-      {/* <Listagem /> */}
-      <Banner />
+      <Contador />
     </>
   );
 }
