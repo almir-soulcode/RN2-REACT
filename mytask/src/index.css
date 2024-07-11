@@ -4,3 +4,7 @@
     width: 320px;
     margin: 16px auto;
 }
+
+.invalid {
+    color: red;
+}
