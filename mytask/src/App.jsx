@@ -6,7 +6,8 @@ import Cadastro from "./pages/Cadastro";
 import Ajuda from "./pages/Ajuda";
 import NotFound from "./pages/NotFound";
 import NovaTarefa from "./pages/NovaTarefa";
-
+import Tarefas from "./pages/Tarefas";
+import { Toaster } from "react-hot-toast";
 // BrowserRouter: componente essencial para conduzir o roteamento no navegador.
 // Route: indicamos a rota (path) e o elemento que será exibido na tela.
 
@@ -14,16 +15,18 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Menu/>
+        <Menu />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/ajuda" element={<Ajuda />} />
-          <Route path="/novatarefa" element={<NovaTarefa />}/>
+          <Route path="/tarefas" element={<Tarefas />} />
+          <Route path="/tarefas/adicionar" element={<NovaTarefa />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Toaster position="bottom-right" />
     </>
   );
 }
