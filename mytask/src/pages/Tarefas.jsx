@@ -4,9 +4,12 @@ import { deleteTarefa, getTarefas } from "../firebase/tarefas";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Tarefas() {
   const [tarefas, setTarefas] = useState(null);
+  
+  const navigate = useNavigate();
 
   function carregarDados() {
     // O then devolve a lista de tarefas da coleção
@@ -57,7 +60,9 @@ function Tarefas() {
                       )}
                       <Badge bg="dark">{tarefa.categoria}</Badge>
                     </div>
-                    <Button variant="dark">Editar</Button>
+                    <Button variant="dark" onClick={() => {
+                      navigate(`/tarefas/editar/${tarefa.id}`);
+                    }}>Editar</Button>
                     <Button variant="danger" onClick={() => deletarTarefa(tarefa.id)}>
                       Excluir
                     </Button>
