@@ -12,7 +12,7 @@ import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
-
+import { UsuarioContext } from "./contexts/UsuarioContext"
 
 function App() {
   // O estado de usuario indica se ele está logado ou não na aplicação
@@ -28,22 +28,26 @@ function App() {
     });
   }, []);
 
+  // Usuario.Provider é o elemento que irá compartilhar um valor/dado
+  // para os componentes filhos da aplicação
   return (
     <>
-      <BrowserRouter>
-        <Menu usuario={usuarioLogado} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/ajuda" element={<Ajuda />} />
-          <Route path="/tarefas" element={<Tarefas />} />
-          <Route path="/tarefas/adicionar" element={<NovaTarefa />} />
-          <Route path="/tarefas/editar/:id" element={<EditarTarefa/>}/>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-      <Toaster position="bottom-right" />
+      <UsuarioContext.Provider value={usuarioLogado}>
+        <BrowserRouter>
+          <Menu />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login  />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/ajuda" element={<Ajuda />} />
+            <Route path="/tarefas" element={<Tarefas />} />
+            <Route path="/tarefas/adicionar" element={<NovaTarefa />} />
+            <Route path="/tarefas/editar/:id" element={<EditarTarefa/>}/>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+        <Toaster position="bottom-right" />
+      </UsuarioContext.Provider>
     </>
   );
 }

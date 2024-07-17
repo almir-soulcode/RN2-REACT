@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../firebase/auth";
+import { useContext } from "react";
+import { UsuarioContext } from "../contexts/UsuarioContext";
 
-function Menu({ usuario }) {
+function Menu() {
+    const usuario = useContext(UsuarioContext);
     const navigate = useNavigate();
 
     function handleLogout() {
