@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
-
-// Link: este componente habilita o SPA (Single-Page Application)
-// Obs: Se houver links externos utilize a tag <a />
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../firebase/auth";
 
 function Menu() {
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        logout().then(() => {
+            navigate("/login");
+        });
+    }
+
     return (
         <header>
             <Navbar bg="dark" variant="dark" expand="md">
@@ -19,6 +26,9 @@ function Menu() {
                             <Link className="nav-link" to="/login">Login</Link>
                             <Link className="nav-link" to="/cadastro">Cadastro</Link>
                             <Link className="nav-link" to="/ajuda">Ajuda</Link>
+                            <Button variant="outline-light" onClick={handleLogout}>
+                                Sair
+                            </Button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
